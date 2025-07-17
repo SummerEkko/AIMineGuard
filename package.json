@@ -1,0 +1,27 @@
+{
+  "name": "aimineguard",
+  "version": "1.0.0",
+  "description": "AI危险动作识别报警系统 - 煤矿安全监控Demo",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "frontend:dev": "turbo run dev --filter=frontend",
+    "backend:dev": "turbo run dev --filter=backend",
+    "install:all": "pnpm install && cd frontend && pnpm install && cd ../backend && pnpm install"
+  },
+  "devDependencies": {
+    "turbo": "^1.12.4"
+  },
+  "packageManager": "pnpm@8.15.4",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

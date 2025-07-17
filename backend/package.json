@@ -1,0 +1,17 @@
+{
+  "name": "@aimineguard/backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "poetry run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "build": "poetry build",
+    "start": "poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000",
+    "install": "poetry install",
+    "init-db": "poetry run python scripts/init_db.py",
+    "migrate": "poetry run alembic upgrade head",
+    "migrate-create": "poetry run alembic revision --autogenerate -m",
+    "lint": "poetry run black . && poetry run isort . && poetry run flake8 .",
+    "test": "poetry run pytest",
+    "clean": "poetry run find . -type d -name __pycache__ -delete && poetry run find . -type f -name '*.pyc' -delete"
+  }
+}
